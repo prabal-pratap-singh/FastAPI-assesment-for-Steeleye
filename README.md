@@ -84,12 +84,12 @@ with open('data.json') as f: # import data from data.json file
     data= json.load(f)
 ```
 ## Calling FASTAPI
-We are now call FastAPI in a varibale named as **app**.
+We are now calling FastAPI in a varibale named as **app**.
 ```python
 app=FastAPI()
 ```
 ## Adding new Trade in our data list
-Here we our going to add new trade in our data set by using a **post** function in FastAPI, named as ** make_package** and then return our new data set in uvicorn website.
+Here we our going to add new trade in our data set by using a **post** function in FastAPI, named as **make_package** and then return our new data set in uvicorn website.
 ```python
 @app.post('/Trade/') # add trade in data
 async def make_package(trade: Trade):
@@ -108,7 +108,7 @@ async def get_item():
 ## Test2 - Single trade
 In this test the user will provide an input **trade_Id** to our FastAPI and then it will return the trade which has same trade_id.  
 ### approach
-We will iterate through all the dictionary and in dictionary will we check if the attribute **trade_id** is equal to the given Id then we will return the Trade.  
+We will iterate through all the trade and in trade will we check if the attribute **trade_id** is equal to the given Id then we will return the Trade.  
 if Trade_id didn't match with any trade then it will return Data not found.
 ```python
 @app.get("/single-trade/{id}") # find single trade using its tardeId
@@ -120,11 +120,11 @@ async def get_item(id: str):
 ## Test3 - Searching trades
 In this test case the user will give us an input and we have to find if any trade that consist that word in them then we have to return the trade.  
 We have to return all the trade that has that input in them.  
-The searching paarameter are:  
--counterparty  
--instrumentId  
--instrumentName  
--trader
+The searching parameter are:  
+- counterparty  
+- instrumentId  
+- instrumentName  
+- trader
 ### approach
 first I have created a new empty list with name as **data1** which will consist all the trade which has that input in them.  
 Then I have started a loop to iterate through the trade and start comparing all searching parameter of every trade with the input.  
@@ -162,7 +162,7 @@ All parameter are optional.
 All maximum and minimum fields are inclusive (e.g. minPrice=2&maxPrice=10 will return 2 <= tradeDetails.price <= 10).  
 ### aproach  
 First I have created a empty list with name as **data2**.</br>
-Then I will iterate through the trades and find if they fall under our filtering criteria then we will append then in our **data2** and the final we will return it.</br>
+Then I will iterate through the trades and find if they fall under our filtering criteria then we will append then in our **data2** and then finally we will return it.</br>
 #### problem faced  
 1. To filter our data on the basis of date and time we have to compare the date of the trade with the given filter parameter and then judge the trade. But due to its data type it is difficult to compare the date and time.  
 Therefore while I'm iterating through the trade, I'm converting them into string and then while comparing them I'm converting them into integer.
@@ -215,10 +215,11 @@ And there will be two type of sorting available i.e **Ascending** and **Descendi
 The user has to give the input for what parameter he want to sort the data and in what oreder he want it.
 ### approach
 First I have created a empty list with name **data3** where i will store the trade and then return it.  
-Then i'm checking if the input is price or quantity and after that i have just iterated through the data-trade and appending trade index as well as its price/quantity in a form of tuple in data3 i.e: [[price,index]].  
-Then i'm using **sorted()** method to sort my **data3** on the basis of price/quantity
-But i have to return the trade not the sorted price/quantity value so, I will use the index which i have stored in data3 along with the price/quantity. As I have sorted the data3 on the bais of price/quantity the index attcahed to will not change.
-Now, i will just iterate through data3 and read its idex value and update data3 with trade of that index and finally I will check if second input is **ascending** then return the data3 if **descending** then return reverse data3.
+Then I'm checking if the input is price or quantity and after that i have just iterated through the data-trade and appending trade index as well as its price/quantity in a form of tuple in data3 i.e: [[price,index]].  
+Then I'm using **sorted()** method to sort my **data3** on the basis of price/quantity.  
+But I have to return the trade not the sorted price/quantity value so, I will use the index which i have stored in data3 along with the price/quantity. As I have sorted the data3 on the basis of price/quantity the index attached to them  will not change.  
+Now, I will just iterate through data3 and read its index value and update data3 with trade of that index.  
+And finally I will check if second input is **ascending** then return the data3 if **descending** then return reverse data3.
 ```python
 @app.get("/sorting") # sorting of the trade on the basis of price and quantity
 async def get_item(*,parameter:str = Query(None, description="Sort by price or quantity"),type:str=Query(None,description="Ascending or Descending")):
@@ -248,3 +249,38 @@ async def get_item(*,parameter:str = Query(None, description="Sort by price or q
         else:
             return data3[::-1]
  ```
+## Pagination
+We have to add pagination feature to our API.
+In pagination we represent our output in a particular page and page size which was mention by the user.  
+The user will provide the API with page number and page size and API has to return the trade on the basis of that.  
+```python
+@app.get("/pagination") # paginating the trade
+async def get_item(page_num:int = Query(1,description="Enter page number"), page_size: int = Query(1,description="Enter size of data in one page")):
+    start = (page_num-1)*page_size
+    end = start+page_size
+    response={
+        "data": data[start:end],
+        "total": len(data),
+        "count": page_size,
+        "pagination":{
+            "next": "next page",
+            "previous": "previous page"
+        }
+    }
+
+    if end>= len(data):
+        response["pagination"]["next"]= None
+
+        if page_num >1:
+            response["pagination"]["previous"]=f"/pagination?page_num{page_num-1}&page_size={page_size}"
+        else:
+            response["pagination"]["previous"]= None
+    else:
+        if page_num>1:
+            response["pagination"]["previous"]=f"/pagination?page_num={page_num-1}&page_size={page_size}"
+        else:
+            response["pagination"]["previous"]=None
+
+        response["pagination"]["next"]=f"/pagination?page_num={page_num+1}&page_size={page_size}"
+    return response
+```
