@@ -6,18 +6,18 @@ As per given assissment we are free to create  our own data set layer using pyda
 I have created data set as a list which consist of dictionaries beacause its is easy to access and manupulate data in a list, i.e: [{},{},{}...{}].
 there are total 20 dictionary in our data set list which consist of 8 attributes and 3 sub attributes
 each dictionary is called as trade and has its own attributes which are:
-1. trade
-      - assetClass :   type str
-      - counterparty :   type str
-      - instrumentId :   type str
-      - instrumentName :   type str
-      - tradeDateTime :   type dt.datetime i.e, 2022-04-12T09:50:56
-      - tradeDetails:
-            - buySellIndicator :   type str
-            - price :   type float
-            - quantity : type int
-      - tradeId :   type str
-      - trader :   type str
+1. trade.
+    - assetClass :   type str
+    - counterparty :   type str
+    - instrumentId :   type str
+    - instrumentName :   type str
+    - tradeDateTime :   type dt.datetime i.e, 2022-04-12T09:50:56
+    - tradeDetails:
+          - buySellIndicator :   type str
+          - price :   type float
+          - quantity : type int
+    - tradeId :   type str
+    - trader :   type str
 Each attribute of an trade has some range of value which are predifine by me to use in test cases like sort, filtering etc.
 the range of values are:
 ( values are case sensitve so use them as given below )
