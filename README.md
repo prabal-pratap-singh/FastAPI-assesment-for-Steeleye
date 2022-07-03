@@ -17,18 +17,18 @@ Each dictionary is called as trade and has its own attributes which are:
           - price :   type float
           - quantity : type int
     - tradeId :   type str
-    - trader :   type str
-Each attribute of an trade has some range of value which are predifine by me to use in test cases like sort, filtering etc.
-the range of values are:
-( values are case sensitve so use them as given below )
-assetClass        =  Equity, Commodities, Bond, Machinery, Real state
-counterparty      =  prabal, zerodha, upstox, arpit, ananya, ananya enterprises, bhavya, ritesh
-instrumentId      =  It is unique for every trade so, it start from a1 till a20
-intrumentName     =  drums, guitar,, shares, loan, football, shares, plot, speaker, building, medical, house, sports car, rent, cars.
-tradeDateTime     =  It is random for every trade and lowest is 2010-06-30T18:52:56 and highest is 2028-04-30T18:52:56
-buySellIndicator  =  buy, sell.
-price             =  It is also random and hence lowest is 10 and highest is 2000000
-quantity          =  It is also random, lowest is 1 and highest is 1000
-tradeId           =  It is unique for every tarde and start from t1 till t20
+    - trader :   type str  
+Each attribute of an trade has some range of value which are predifine by me to use in test cases like sort, filtering etc.  
+the range of values are:  
+( values are case sensitve so use them as given below )  
+assetClass        =  Equity, Commodities, Bond, Machinery, Real state  
+counterparty      =  prabal, zerodha, upstox, arpit, ananya, ananya enterprises, bhavya, ritesh  
+instrumentId      =  It is unique for every trade so, it start from a1 till a20  
+intrumentName     =  drums, guitar,, shares, loan, football, shares, plot, speaker, building, medical, house, sports car, rent, cars.  
+tradeDateTime     =  It is random for every trade and lowest is 2010-06-30T18:52:56 and highest is 2028-04-30T18:52:56  
+buySellIndicator  =  buy, sell.  
+price             =  It is also random and hence lowest is 10 and highest is 2000000  
+quantity          =  It is also random, lowest is 1 and highest is 1000  
+tradeId           =  It is unique for every tarde and start from t1 till t20  
 trader            =  ritesh, prabal, bob singh, ananya enterprises, arpit, LIC, zerodha, fcb, medical store, bhavya.
 
