@@ -1,0 +1,261 @@
+[{
+  "assetClass": "Commodities",
+  "counterparty": "Prabal",
+  "instrumentId": "a1",
+  "instrumentName": "drums",
+  "tradeDateTime": "2012-11-30T04:52:56",
+  "tradeDetails": {
+    "buySellIndicator": "sell",
+    "price": 100,
+    "quantity": 100
+  },
+  "tradeId": "t1",
+  "trader": "ritesh"
+},{
+  "assetClass": "Commodities",
+  "counterparty": "ritesh",
+  "instrumentId": "a2",
+  "instrumentName": "guitar",
+  "tradeDateTime": "2010-06-30T18:52:56",
+  "tradeDetails": {
+    "buySellIndicator": "buy",
+    "price": 10,
+    "quantity": 10
+  },
+  "tradeId": "t2",
+  "trader": "prabal"
+},{
+  "assetClass": "Equity",
+  "counterparty": "zerodha",
+  "instrumentId": "a3",
+  "instrumentName": "shares",
+  "tradeDateTime": "2028-04-30T18:52:56",
+  "tradeDetails": {
+    "buySellIndicator": "buy",
+    "price": 100,
+    "quantity": 1000
+  },
+  "tradeId": "t3",
+  "trader": "bob singh"
+},{
+  "assetClass": "Bond",
+  "counterparty": "prabal",
+  "instrumentId": "a4",
+  "instrumentName": "loan",
+  "tradeDateTime": "2012-04-30T18:52:56",
+  "tradeDetails": {
+    "buySellIndicator": "sell",
+    "price": 100000,
+    "quantity": 1
+  },
+  "tradeId": "t4",
+  "trader": "ananya enterprises"
+  },{
+  "assetClass": "Commodities",
+  "counterparty": "ritesh",
+  "instrumentId": "a5",
+  "instrumentName": "football",
+  "tradeDateTime": "2022-08-30T18:52:56",
+  "tradeDetails": {
+    "buySellIndicator": "sell",
+    "price": 1000,
+    "quantity": 200
+  },
+  "tradeId": "t5",
+  "trader": "ananya enterprises"
+  },{
+  "assetClass": "Euity",
+  "counterparty": "upstox",
+  "instrumentId": "a6",
+  "instrumentName": "shares",
+  "tradeDateTime": "2016-09-30T20:52:56",
+  "tradeDetails": {
+    "buySellIndicator": "sell",
+    "price": 12000,
+    "quantity": 1000
+  },
+  "tradeId": "t6",
+  "trader": "ananya enterprises"
+  },{
+  "assetClass": "Real estate",
+  "counterparty": "prabal",
+  "instrumentId": "a7",
+  "instrumentName": "plot",
+  "tradeDateTime": "2019-10-30T18:52:56",
+  "tradeDetails": {
+    "buySellIndicator": "sell",
+    "price": 10,
+    "quantity": 0
+  },
+  "tradeId": "t7",
+  "trader": "ananya enterprises"
+  },{
+  "assetClass": "Bond",
+  "counterparty": "arpit",
+  "instrumentId": "a8",
+  "instrumentName": "loan",
+  "tradeDateTime": "2012-05-30T18:52:56",
+  "tradeDetails": {
+    "buySellIndicator": "sell",
+    "price": 30000,
+    "quantity": 3
+  },
+  "tradeId": "t8",
+  "trader": "LIC"
+  },{
+  "assetClass": "Equity",
+  "counterparty": "prabal",
+  "instrumentId": "a9",
+  "instrumentName": "share",
+  "tradeDateTime": "2020-05-30T18:52:56",
+  "tradeDetails": {
+    "buySellIndicator": "sell",
+    "price": 1000,
+    "quantity": 30
+  },
+  "tradeId": "t9",
+  "trader": "zerodha"
+  },{
+  "assetClass": "Commodities",
+  "counterparty": "ananya",
+  "instrumentId": "a10",
+  "instrumentName": "speaker",
+  "tradeDateTime": "2022-02-30T17:50:56",
+  "tradeDetails": {
+    "buySellIndicator": "sell",
+    "price": 2000,
+    "quantity": 2
+  },
+  "tradeId": "t10",
+  "trader": "fcb"
+  },{
+  "assetClass": "Real state",
+  "counterparty": "arpit",
+  "instrumentId": "a11",
+  "instrumentName": "building",
+  "tradeDateTime": "2021-03-30T11:52:56",
+  "tradeDetails": {
+    "buySellIndicator": "sell",
+    "price": 2000000,
+    "quantity":1
+  },
+  "tradeId": "t11",
+  "trader": "prabal"
+  },{
+  "assetClass": "Bond",
+  "counterparty": "bhavya",
+  "instrumentId": "a12",
+  "instrumentName": "loan",
+  "tradeDateTime": "2020-01-29T8:52:56",
+  "tradeDetails": {
+    "buySellIndicator": "sell",
+    "price": 100000,
+    "quantity": 1
+  },
+  "tradeId": "t12",
+  "trader": "LIC"
+  },{
+  "assetClass": "Machinery",
+  "counterparty": "ananya enterprises",
+  "instrumentId": "a13",
+  "instrumentName": "medical",
+  "tradeDateTime": "2022-02-30T20:20:56",
+  "tradeDetails": {
+    "buySellIndicator": "buy",
+    "price": 100000,
+    "quantity": 100
+  },
+  "tradeId": "t13",
+  "trader": "medical store"
+  },{
+  "assetClass": "Real state",
+  "counterparty": "prabal",
+  "instrumentId": "a14",
+  "instrumentName": "house",
+  "tradeDateTime": "2020-12-01T02:50:56",
+  "tradeDetails": {
+    "buySellIndicator": "buy",
+    "price": 1000000,
+    "quantity": 1
+  },
+  "tradeId": "t14",
+  "trader": "arpit"
+  },{
+  "assetClass": "Machinery",
+  "counterparty": "ritesh",
+  "instrumentId": "a15",
+  "instrumentName": "sports car",
+  "tradeDateTime": "2019-06-23T16:32:56",
+  "tradeDetails": {
+    "buySellIndicator": "sell",
+    "price": 10000,
+    "quantity": 2
+  },
+  "tradeId": "t15",
+  "trader": "prabal"
+  },{
+  "assetClass": "Bond",
+  "counterparty": "arpit",
+  "instrumentId": "a16",
+  "instrumentName": "rent",
+  "tradeDateTime": "2021-03-03T18:52:56",
+  "tradeDetails": {
+    "buySellIndicator": "buy",
+    "price": 1000,
+    "quantity": 2
+  },
+  "tradeId": "t16",
+  "trader": "bhavya"
+  },{
+  "assetClass": "Commodities",
+  "counterparty": "ritesh",
+  "instrumentId": "a17",
+  "instrumentName": "medical",
+  "tradeDateTime": "2022-04-23T12:50:56",
+  "tradeDetails": {
+    "buySellIndicator": "buy",
+    "price": 100,
+    "quantity": 1000
+  },
+  "tradeId": "t17",
+  "trader": "ananya enterprises"
+  },{
+  "assetClass": "Equity",
+  "counterparty": "prabal",
+  "instrumentId": "a18",
+  "instrumentName": "share",
+  "tradeDateTime": "2022-04-12T09:50:56",
+  "tradeDetails": {
+    "buySellIndicator": "sell",
+    "price": 1012,
+    "quantity": 100
+  },
+  "tradeId": "t7",
+  "trader": "LIC"
+  },{
+  "assetClass": "Real state",
+  "counterparty": "ananya enterprises",
+  "instrumentId": "a19",
+  "instrumentName": "plot",
+  "tradeDateTime": "2021-07-26T17:43:56",
+  "tradeDetails": {
+    "buySellIndicator": "buy",
+    "price": 1000000,
+    "quantity": 1
+  },
+  "tradeId": "t19",
+  "trader": "arpit"
+  },{
+  "assetClass": "Commodities",
+  "counterparty": "ritesh",
+  "instrumentId": "a20",
+  "instrumentName": "cars",
+  "tradeDateTime": "2022-05-30T18:52:56",
+  "tradeDetails": {
+    "buySellIndicator": "buy",
+    "price": 100000,
+    "quantity": 2
+  },
+  "tradeId": "t20",
+  "trader": "prabal"
+  }]
