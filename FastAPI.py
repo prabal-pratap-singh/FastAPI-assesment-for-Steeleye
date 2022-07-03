@@ -1,5 +1,4 @@
 import sys
-from urllib import response
 from fastapi import FastAPI, Path, Query
 import datetime as dt
 from datetime import *
@@ -45,16 +44,15 @@ async def make_package(trade: Trade):
     data.append(trade)
     return data
 
+@app.get("/listing-trades")
+async def get_item():
+      return data
+      
 @app.get("/single-trade/{id}")
 async def get_item(id: str):
     for item in data:
         if item["trade_id"]==id:
             return item
-
-@app.get("/listing-trades")
-async def get_item():
-    for i in range(len(data)):
-        return data
 
 @app.get("/search/{search}")
 async def get_item(search: str):
@@ -99,7 +97,7 @@ async def get_item(*,assetClass:Optional[str]=None, end:Optional[dt.datetime]="3
             a_trade=trade["tradeDetails"]["buySellIndicator"]
         else:
             a_trade=tradeType
-        if trade["assetClass"]==a_asset and x>=y and x<=z and trade["tradeDetails"]["price"]<=maxPrice and trade["tradeDetails"]["price"]>=minPrice and trade["tradeDetails"]["buySellIndicator"]== a_trade:
+        if trade["assetClass"]==a_asset and int(x)>=int(y) and int(x)<=int(z) and trade["tradeDetails"]["price"]<=maxPrice and trade["tradeDetails"]["price"]>=minPrice and trade["tradeDetails"]["buySellIndicator"]== a_trade:
             data2.append(trade)
     return data2
 
