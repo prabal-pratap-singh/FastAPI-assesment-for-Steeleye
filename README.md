@@ -156,4 +156,15 @@ The parameter for filtering are:
 | maxPrice |The maximum value for the tradeDetails.price field.|  
 | minPrice |The minimum value for the tradeDetails.price field.|  
 | start |The minimum date for the tradeDateTime field. |  
-| tradeType | The tradeDetails.buySellIndicator is a BUY or SELL<br/>second line of text |  
+| tradeType | The tradeDetails.buySellIndicator is a BUY or SELL.|  
+
+All parameter are optional.  
+All maximum and minimum fields are inclusive (e.g. minPrice=2&maxPrice=10 will return 2 <= tradeDetails.price <= 10).  
+### aproach  
+First I have created a empty list with name as **data2**.</br>
+Then I will iterate through the trades and find if they fall under our filtering criteria then we will append then in our **data2** and the final we will return it.</br>
+#### problem faced  
+To filter our data in the basis of date and time we have to compare the date of the trade with the given filter parameter and then judge the trade. But due to its data type it is difficult to compare the date and time.  
+Therefore while I'm iterating through the trade, I'm converting them into string and then comparing them with the user input data and time.  
+To convert data and time I'm taking a variable **y** for **start** and **z** for 
+
