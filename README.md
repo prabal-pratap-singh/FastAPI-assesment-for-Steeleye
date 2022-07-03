@@ -76,4 +76,16 @@ class Trade(BaseModel):
 
     trader: str = Field(description="The name of the Trader")
 ```
-Our data base is based on this pydantic base model which was provide by steeleye.
+Our data base is based on this pydantic base model which was provide by steeleye.  
+# Importing Data set from JSON file
+As we have created our data set in different file named as **data**, now we are calling it in our main code **FastAPI** and storing in in a list named as **data**.
+```python
+with open('data.json') as f: # import data from data.json file
+    data= json.load(f)
+```
+# calling FASTAPI
+We are now call FastAPI in a varibale named as **app**
+```python
+app=FastAPI()
+```
+
