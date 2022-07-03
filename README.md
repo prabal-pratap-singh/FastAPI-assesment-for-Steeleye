@@ -20,7 +20,7 @@ Each dictionary is called as trade and has its own attributes which are:
     - trader :   type str  
   
 Each attribute of an trade has some range of value which are predifine by me to use in test cases like sort, filtering etc.  
-the range of values are:  
+The range of values are:  
 ( values are case sensitve so use them as given below )  
 - assetClass          =  Equity, Commodities, Bond, Machinery, Real state  
 - counterparty      =  prabal, zerodha, upstox, arpit, ananya, ananya enterprises, bhavya, ritesh  
@@ -33,3 +33,16 @@ the range of values are:
 - tradeId           =  It is unique for every tarde and start from t1 till t20  
 - trader            =  ritesh, prabal, bob singh, ananya enterprises, arpit, LIC, zerodha, fcb, medical store, bhavya.
 
+# CODE  
+
+## Header file used:
+'''
+import sys
+from urllib import response
+from fastapi import FastAPI, Path, Query
+import datetime as dt
+from datetime import *
+from typing import Optional
+from pydantic import BaseModel, Field
+import json
+'''
