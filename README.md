@@ -22,7 +22,7 @@ Each dictionary is called as trade and has its own attributes which are:
 Each attribute of an trade has some range of value which are predifine by me to use in test cases like sort, filtering etc.  
 the range of values are:  
 ( values are case sensitve so use them as given below )  
-- assetClass        =  Equity, Commodities, Bond, Machinery, Real state  
+- assetClass          =  Equity, Commodities, Bond, Machinery, Real state  
 - counterparty      =  prabal, zerodha, upstox, arpit, ananya, ananya enterprises, bhavya, ritesh  
 - instrumentId      =  It is unique for every trade so, it start from a1 till a20  
 - intrumentName     =  drums, guitar,, shares, loan, football, shares, plot, speaker, building, medical, house, sports car, rent, cars.  
