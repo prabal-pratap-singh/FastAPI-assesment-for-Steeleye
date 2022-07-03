@@ -96,9 +96,18 @@ async def make_package(trade: Trade):
     data.append(trade)
     return data
 ```
-## Test1 - Single trade
+## Test1 - Listing trade
+In this test case we have to return list of trade to the user
+##approach
+we will simply return the data set as it is already in a list
+```python
+@app.get("/listing-trades") # return all the trade
+async def get_item():
+        return data
+ ```
+## Test2 - Single trade
 In this test the user will provide an input **trade_Id** to our FastAPI and then it will return the trade which has same trade_id.  
-### Logic
+### approach
 We will iterate through all the dictionary and in dictionary will we check if the attribute **trade_id** is equal to the given Id then we will return the Trade.  
 if Trade_id didn't match with any trade then it will return Data not found.
 ```python
@@ -108,6 +117,33 @@ async def get_item(id: str):
         if item["trade_id"]==id:
             return item
  ```
+## Test3 - Searching trades
+In this test case the user will give us an input and we have to find if any trade that consist that word in them then we have to return the list of all the trade.  
+The searching paarameter are:
+-counterparty
+-instrumentId
+-instrumentName
+-trader
+### approach
+first I have created a new empty list with name as **data1** which will consist all the trade which has that input in them.  
+Then I have started a loop to iterate through the trade and start comparing all searching parameter of every trade with the input.  
+If the input matchs with the trade attributes then it will append in the empty list named as **data1**.  
+And then finally return the **data1**.
+```python
+@app.get("/search/{search}") # search a specific word in all the trade and then return the trade if its matchs 
+async def get_item(search: str):
+    data1=[]
 
+    for item in data:
+        if item["counterparty"]==search:
+            data1.append(item)
+        elif item["instrumentId"]==search:
+            data1.append(item)
+        elif item["instrumentName"]==search:
+            data1.append(item)
+        elif item["trader"]==search:
+            data1.append(item)
+    return data1
+```
 
 
