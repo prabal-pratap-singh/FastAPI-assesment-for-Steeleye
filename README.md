@@ -146,5 +146,14 @@ async def get_item(search: str):
             data1.append(item)
     return data1
 ```
-
-
+## Test4 - Advanced filtering
+We have to add the ability to filter the trade in our API.  
+The parameter for filtering are:
+| Parameter | Description | 
+|-----------|:-----------:|
+| assetClass | Asset class of the trade.| 
+| end | The maximum date for the tradeDateTime field|
+| maxPrice |The maximum value for the tradeDetails.price field.|  
+| minPrice |The minimum value for the tradeDetails.price field.|  
+| start |The minimum date for the tradeDateTime field. |  
+| tradeType | The tradeDetails.buySellIndicator is a BUY or SELL<br/>second line of text |  
