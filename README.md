@@ -18,6 +18,7 @@ Each dictionary is called as trade and has its own attributes which are:
           - quantity : type int
     - tradeId :   type str
     - trader :   type str  
+  
 Each attribute of an trade has some range of value which are predifine by me to use in test cases like sort, filtering etc.  
 the range of values are:  
 ( values are case sensitve so use them as given below )  
