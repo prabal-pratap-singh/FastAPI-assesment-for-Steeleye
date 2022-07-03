@@ -118,8 +118,10 @@ async def get_item(id: str):
             return item
  ```
 ## Test3 - Searching trades
-In this test case the user will give us an input and we have to find if any trade that consist that word in them then we have to return the list of all the trade.  
-The searching paarameter are:
+In this test case the user will give us an input and we have to find if any trade that consist that word in them then we have to return the trade.  
+We have to return all the trade that has that input in them.
+The searching paarameter are:  
+
 -counterparty
 -instrumentId
 -instrumentName
