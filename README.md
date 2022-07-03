@@ -3,7 +3,8 @@ This API was made as the  assessment work for steel eye.
 
 # DATA SET
 As per given assissment we are free to create  our own data set layer using pydant base model which is given to us as our data set foundation.  
-I have created data set as a list which consist of dictionaries beacause its is easy to access and manupulate data in a list, i.e: [{},{},{}...{}].
+I have created data set as a list which consist of dictionaries beacause its is easy to access and manupulate data in a list, i.e: [{},{},{}...{}].  
+
 There are total 20 dictionary in our data set list which consist of 8 attributes and 3 sub attributes.
 Each dictionary is called as trade and has its own attributes which are:
 1. trade.
