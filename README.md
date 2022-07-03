@@ -119,12 +119,11 @@ async def get_item(id: str):
  ```
 ## Test3 - Searching trades
 In this test case the user will give us an input and we have to find if any trade that consist that word in them then we have to return the trade.  
-We have to return all the trade that has that input in them.
+We have to return all the trade that has that input in them.  
 The searching paarameter are:  
-
--counterparty
--instrumentId
--instrumentName
+-counterparty  
+-instrumentId  
+-instrumentName  
 -trader
 ### approach
 first I have created a new empty list with name as **data1** which will consist all the trade which has that input in them.  
