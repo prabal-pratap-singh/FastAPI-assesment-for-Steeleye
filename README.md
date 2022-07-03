@@ -36,7 +36,7 @@ The range of values are:
 # CODE  
 
 ## Header file used:
-''' python
+``` python
 import sys
 from urllib import response
 from fastapi import FastAPI, Path, Query
@@ -45,4 +45,4 @@ from datetime import *
 from typing import Optional
 from pydantic import BaseModel, Field
 import json
-'''
+```
