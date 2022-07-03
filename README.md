@@ -97,9 +97,10 @@ async def make_package(trade: Trade):
     return data
 ```
 ## Test1 - Single trade
-In this test the user will provide an input **trade_Id** to our FastAPI and then it will return the trade which has same tarde_id.  
+In this test the user will provide an input **trade_Id** to our FastAPI and then it will return the trade which has same trade_id.  
+### Logic
 We will iterate through all the dictionary and in dictionary will we check if the attribute **trade_id** is equal to the given Id then we will return the Trade.  
-if Trade_id didn't match with any tarde then it will return Data not found.
+if Trade_id didn't match with any trade then it will return Data not found.
 ```python
 @app.get("/single-trade/{id}") # find single trade using its tardeId
 async def get_item(id: str):
