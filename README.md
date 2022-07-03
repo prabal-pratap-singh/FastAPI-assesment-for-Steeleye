@@ -98,7 +98,7 @@ async def make_package(trade: Trade):
 ```
 ## Test1 - Listing trade
 In this test case we have to return list of trade to the user
-##approach
+## approach
 we will simply return the data set as it is already in a list
 ```python
 @app.get("/listing-trades") # return all the trade
@@ -164,7 +164,87 @@ All maximum and minimum fields are inclusive (e.g. minPrice=2&maxPrice=10 will r
 First I have created a empty list with name as **data2**.</br>
 Then I will iterate through the trades and find if they fall under our filtering criteria then we will append then in our **data2** and the final we will return it.</br>
 #### problem faced  
-To filter our data in the basis of date and time we have to compare the date of the trade with the given filter parameter and then judge the trade. But due to its data type it is difficult to compare the date and time.  
-Therefore while I'm iterating through the trade, I'm converting them into string and then comparing them with the user input data and time.  
-To convert data and time I'm taking a variable **y** for **start** and **z** for 
-
+1. To filter our data on the basis of date and time we have to compare the date of the trade with the given filter parameter and then judge the trade. But due to its data type it is difficult to compare the date and time.  
+Therefore while I'm iterating through the trade, I'm converting them into string and then while comparing them I'm converting them into integer.
+To convert data and time I'm taking a variable **y** for **start** and **z** for **end** and **x** for **trade date and time**.  
+2. As our all the parameter are optional so i have to create a way so that if the user didn't mention the parameter then also print the trade on the basis of other parameter or default value.  
+Therefore, I have created a **default value** for every parameter which are:  
+- assetClass = the current trade assetvalue
+- end = 3000-12-31T23:59:59
+- maxPrice = sys.maxsize
+- minPrice = -sys.maxsize-1
+- start = 1900-12-31T23:59:59
+- tradeType = the current trade assetvalue
+```python
+@app.get("/advance-filtering") # filtering the trade according to the parameter
+async def get_item(*,assetClass:Optional[str]=None, end:Optional[dt.datetime]="3000-12-31T23:59:59", maxPrice: Optional[int]=sys.maxsize, minPrice: Optional[int]= -sys.maxsize-1, start: Optional[dt.datetime]="1900-12-31T23:59:59", tradeType: Optional[str]=None):
+    data2=[]
+    y=0
+    start=str(start)
+    arr=[1,2,3,4,5,6,7,8,9,0]
+    for i in range(len(start)):
+            if start[i] in arr:
+                y=y*10+start[i]
+    z=0
+    end=str(end)
+    for i in range(len(end)):
+            if end[i] in arr:
+                z=z*10+end[i]
+    for trade in data:
+        x=0
+        string=str(trade["tradeDateTime"])
+        for i in range(len(string)):
+            if string[i] in arr:
+                x=x*10+string[i]
+        if assetClass == None:
+            a_asset=trade["assetClass"]
+        else:
+            a_asset=assetClass
+        if tradeType==None:
+            a_trade=trade["tradeDetails"]["buySellIndicator"]
+        else:
+            a_trade=tradeType
+        if trade["assetClass"]==a_asset and int(x)>=int(y) and int(x)<=int(z) and trade["tradeDetails"]["price"]<=maxPrice and trade["tradeDetails"]["price"]>=minPrice and trade["tradeDetails"]["buySellIndicator"]== a_trade:
+            data2.append(trade)
+    return data2
+```
+# Bonus task
+## Sorting
+We have to add sorting feature in our API. The parameter was not mentioned so I have choosen **Price** and **Quantity** as my parameter.  
+And there will be two type of sorting available i.e **Ascending** and **Descending**.  
+The user has to give the input for what parameter he want to sort the data and in what oreder he want it.
+### approach
+First I have created a empty list with name **data3** where i will store the trade and then return it.  
+Then i'm checking if the input is price or quantity and after that i have just iterated through the data-trade and appending trade index as well as its price/quantity in a form of tuple in data3 i.e: [[price,index]].  
+Then i'm using **sorted()** method to sort my **data3** on the basis of price/quantity
+But i have to return the trade not the sorted price/quantity value so, I will use the index which i have stored in data3 along with the price/quantity. As I have sorted the data3 on the bais of price/quantity the index attcahed to will not change.
+Now, i will just iterate through data3 and read its idex value and update data3 with trade of that index and finally I will check if second input is **ascending** then return the data3 if **descending** then return reverse data3.
+```python
+@app.get("/sorting") # sorting of the trade on the basis of price and quantity
+async def get_item(*,parameter:str = Query(None, description="Sort by price or quantity"),type:str=Query(None,description="Ascending or Descending")):
+    data3=[]
+    if parameter=="price":
+        for i in range(len(data)):
+                trade=data[i]
+                data3.append([trade["tradeDetails"]["price"],i])
+        sorted_values=sorted(data3) 
+        for i in range(len(sorted_values)):
+            x=sorted_values[i][1]
+            data3[i]=(data[x])
+        if type=="ascending":
+            return data3
+        else:
+            return data3[::-1]
+    elif parameter=="quantity":
+        for i in range(len(data)):
+                trade=data[i]
+                data3.append([trade["tradeDetails"]["quantity"],i])
+        sorted_values=sorted(data3) 
+        for i in range(len(sorted_values)):
+            x=sorted_values[i][1]
+            data3[i]=(data[x])
+        if type=="ascending":
+            return data3
+        else:
+            return data3[::-1]
+ ```
