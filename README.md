@@ -84,8 +84,29 @@ with open('data.json') as f: # import data from data.json file
     data= json.load(f)
 ```
 ## Calling FASTAPI
-We are now call FastAPI in a varibale named as **app**
+We are now call FastAPI in a varibale named as **app**.
 ```python
 app=FastAPI()
 ```
+## Adding new Trade in our data list
+Here we our going to add new trade in our data set by using a **post** function in FastAPI, named as ** make_package** and then return our new data set in uvicorn website.
+```python
+@app.post('/Trade/') # add trade in data
+async def make_package(trade: Trade):
+    data.append(trade)
+    return data
+```
+## Test1 - Single trade
+In this test the user will provide an input **trade_Id** to our FastAPI and then it will return the trade which has same tarde_id.  
+We will iterate through all the dictionary and in dictionary will we check if the attribute **trade_id** is equal to the given Id then we will return the Trade.  
+if Trade_id didn't match with any tarde then it will return Data not found.
+```python
+@app.get("/single-trade/{id}") # find single trade using its tardeId
+async def get_item(id: str):
+    for item in data:
+        if item["trade_id"]==id:
+            return item
+ ```
+
+
 
