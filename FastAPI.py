@@ -39,59 +39,6 @@ app=FastAPI()
 with open('data.json') as f:
     data= json.load(f)
 
-# data=[{
-#   "assetClass": "prabal",
-#   "counterparty": "prabal",
-#   "instrumentId": "string",
-#   "instrumentName": "string",
-#   "tradeDateTime": "2022-06-30T18:52:56",
-#   "tradeDetails": {
-#     "buySellIndicator": "sell",
-#     "price": 100,
-#     "quantity": 0
-#   },
-#   "tradeId": "string",
-#   "trader": "string"
-# },{
-#   "assetClass": "ritesh",
-#   "counterparty": "ritesh",
-#   "instrumentId": "string",
-#   "instrumentName": "string",
-#   "tradeDateTime": "2022-05-30T18:52:56",
-#   "tradeDetails": {
-#     "buySellIndicator": "sell",
-#     "price": 10,
-#     "quantity": 0
-#   },
-#   "tradeId": "string",
-#   "trader": "string"
-# },{
-#   "assetClass": "prabal",
-#   "counterparty": "prabal",
-#   "instrumentId": "string",
-#   "instrumentName": "string",
-#   "tradeDateTime": "2022-04-30T18:52:56",
-#   "tradeDetails": {
-#     "buySellIndicator": "buy",
-#     "price": 100,
-#     "quantity": 0
-#   },
-#   "tradeId": "string",
-#   "trader": "string"
-# },{
-#   "assetClass": "lata",
-#   "counterparty": "prabal",
-#   "instrumentId": "string",
-#   "instrumentName": "string",
-#   "tradeDateTime": "2022-04-30T18:52:56",
-#   "tradeDetails": {
-#     "buySellIndicator": "buy",
-#     "price": 100,
-#     "quantity": 0
-#   },
-#   "tradeId": "string",
-#   "trader": "string"
-#   }]
 
 
 @app.post('/Trade/')
