@@ -50,6 +50,7 @@ import json
 ```
 All these libray are used as per as need in python code.  
 ## Pydantic Base model
+Our data base is based on this pydantic base model which was provide by steeleye.
 ```python
 class TradeDetails(BaseModel):
     buySellIndicator: str = Field(description="A value of BUY for buys, SELL for sells.")
@@ -75,15 +76,14 @@ class Trade(BaseModel):
     trade_id: str = Field(alias="tradeId", default=None, description="The unique ID of the trade")
 
     trader: str = Field(description="The name of the Trader")
-```
-Our data base is based on this pydantic base model which was provide by steeleye.  
-# Importing Data set from JSON file
-As we have created our data set in different file named as **data**, now we are calling it in our main code **FastAPI** and storing in in a list named as **data**.
+```  
+## Importing Data set from JSON file
+As we have created our data set in different file named as **data**, now we are calling it in our main code **FastAPI** and storing in  a list named as **data**.
 ```python
 with open('data.json') as f: # import data from data.json file
     data= json.load(f)
 ```
-# calling FASTAPI
+## Calling FASTAPI
 We are now call FastAPI in a varibale named as **app**
 ```python
 app=FastAPI()
