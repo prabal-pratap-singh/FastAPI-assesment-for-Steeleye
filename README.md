@@ -13,9 +13,9 @@ each dictionary is called as trade and has its own attributes which are:
       - instrumentName :   type str
       - tradeDateTime :   type dt.datetime i.e, 2022-04-12T09:50:56
       - tradeDetails:
-                - buySellIndicator :   type str
-                - price :   type float
-                - quantity : type int
+            - buySellIndicator :   type str
+            - price :   type float
+            - quantity : type int
       - tradeId :   type str
       - trader :   type str
 Each attribute of an trade has some range of value which are predifine by me to use in test cases like sort, filtering etc.
