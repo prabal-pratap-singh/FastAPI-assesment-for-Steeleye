@@ -36,7 +36,7 @@ The range of values are:
 # CODE  
 
 ## Header file used:
-'''
+''' python
 import sys
 from urllib import response
 from fastapi import FastAPI, Path, Query
